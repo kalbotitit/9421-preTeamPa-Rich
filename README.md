@@ -7,4 +7,6 @@ Jacinto, Josef Luis
 Quedado, Reina May
 
 ### Initial
-sluPortal class 
+sluPortal class for the reference type of content for menu
+
+Suggest kayo kung ano ang pwedeng gawin 
