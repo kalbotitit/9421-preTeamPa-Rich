@@ -38,26 +38,30 @@ public class NestedList<E> implements MyList<E>{
 
     @Override
     public void insert(E data) throws ListOverflowException {
-        // TODO insert method
+        addTail(data);
     }
 
     @Override
     public E getElement(E data) throws NoSuchElementException {
-        // TODO getElement method
-        return null;
+        if(search(data)) return data;
+        else throw new NoSuchElementException("No element in the list");
     }
 
     @Override
     public boolean delete(E data) {
-        // TODO delete method
-        return false;
+        return search(data);
     }
 
     @Override
     public boolean search(E data) {
-        // TODO search method
+        Node<E> current = head;     // copy the head of the list to current
+        for (int node = 0; node < getSize(); node++){       // traverse to all nodes
+            if (current.getElement().equals(data)){
+                return true;
+            }
+        }
         return false;
-    }
+    }// end search method
 
 
     private static class Node<E> {
