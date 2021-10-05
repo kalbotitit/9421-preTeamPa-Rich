@@ -4,20 +4,31 @@ import java.util.NoSuchElementException;
 
 public class NestedList<E> implements MyList<E>{
 
-    private Node<E> header;
-    private Node<E> trailer;
+    private Node<E> head;
+    private Node<E> tail;
     private int size = 0;
 
     NestedList(){
 
     }
 
-    NestedList(E e){
-        new Node<E>(e);
-    }
-
     public boolean isEmpty(){
         return size == 0;
+    }
+
+    public void addHead(E h){
+        Node<E> newNode = new Node<>(h, head);
+        head = newNode;
+        if(isEmpty()) tail = newNode;
+        ++size;
+    }
+
+    public void addTail (E t){
+        Node<E> newNode = new Node<>(t, null);
+        if (isEmpty()) head = newNode;
+        else tail.setNext(newNode);
+        tail = newNode;
+        ++size;
     }
 
     @Override
@@ -53,21 +64,16 @@ public class NestedList<E> implements MyList<E>{
 
         E element;
         Node<E> next;
-        Node<E> prev;
 
         Node(){
 
         }
 
-        Node(Node<E> p, E e, Node<E> n){
-            prev = p;
+        Node(E e, Node<E> n){
             element = e;
             next = n;
         }
 
-        Node(E e){
-            element = e;
-        }
 
         private Node<E> getNext() {
             return next;
@@ -77,13 +83,14 @@ public class NestedList<E> implements MyList<E>{
             this.next = next;
         }
 
-        public Node<E> getPrev() {
-            return prev;
+        private void setElement(E e){
+            element = e;
         }
 
-        public void setPrev(Node<E> prev) {
-            this.prev = prev;
+        private E getElement(){
+            return element;
         }
+
     } // end of Node class
 
 }// end of prelim.NestedList class
