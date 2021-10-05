@@ -1,4 +1,4 @@
-#9421-CS211 Group Activity 2
+# 9421-CS211 Group Activity 2
 
 Cortez, Leo Anthony
 Ecleo, Kent John
