@@ -31,6 +31,18 @@ public class NestedList<E> implements MyList<E>{
         ++size;
     }
 
+    public E get(int node){
+        if (isEmpty()) return null;
+        if (node < 0 || node >= getSize()) throw new IndexOutOfBoundsException("Out of bounds");
+        Node<E> current = head;
+        int n = 0;
+        while (n < node){
+            current = current.getNext();
+            n++;
+        }
+        return current.getElement();
+    }
+
     @Override
     public int getSize() {
         return size;
@@ -59,6 +71,7 @@ public class NestedList<E> implements MyList<E>{
             if (current.getElement().equals(data)){
                 return true;
             }
+            current = current.getNext();
         }
         return false;
     }// end search method
