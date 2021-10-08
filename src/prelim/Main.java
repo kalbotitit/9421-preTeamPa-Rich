@@ -29,11 +29,12 @@ public class Main {
     sluPortal studStatus = new sluPortal("Student Status", "Status:\n" +
             "- CURRENTLY ENROLLED THIS FIRST SEMESTER, 2021-2022 IN BSCS 2.");
     // TODO schedule
-    // TODO attendance
+
+
     NestedList<sluPortal> attendanceMenu = new NestedList<>();
     sluPortal attendance = new sluPortal("Attendance", null);
     sluPortal studBehaviour = new sluPortal("Student Behavior","Bahaviour:\n"+"Great! No Absences/Tardiness were found.");
-    // TODO stt of acc
+
     NestedList<sluPortal> statementOfAccMenu = new NestedList<>();
     sluPortal statementOfAcc = new sluPortal("Statement of Account", null);
     sluPortal firstSemStatOfAcc = new sluPortal ("Statement of Accounts (FIRST SEMESTER, 2021-2022)", """
@@ -50,13 +51,13 @@ public class Main {
     // TODO journ
     // TODO curri check
     // TODO schl cal
-    NestedList<sluPortal> perDet = new nestedList<>();
+    NestedList<sluPortal> perDet = new NestedList<>();
     sluPortal perD = new sluPortal("Personal Test Developement", null);
     sluPortal genInfo = new sluPortal("General Information", "Gender:Male\n Birthday:September 30, 2000\n" +
                                            "Religion: Roman Catholic\n Birthplace:Baguio City\n Nationality: ");
     sluPortal conInfo = new sluPortal("Contact Information", "Home Address:Null\n Home Telephone Number:Null\n" +
                                           "Baguio Address:Null\n Cellphone Number:Null\n Email:juandealcruz@gmail.com");
-    sluPortal conPersons = new sluPortal("Contact Persons", "Father:N/A\n Occupation:N/A\n Mother:N/A\n")
+    sluPortal conPersons = new sluPortal("Contact Persons", "Father:N/A\n Occupation:N/A\n Mother:N/A\n");
     // TODO dl/abtslu
     NestedList<sluPortal> ptuRes = new NestedList<>();
     sluPortal ptu = new sluPortal("PTU Test Result", null);
