@@ -58,7 +58,19 @@ public class Main {
     sluPortal conInfo = new sluPortal("Contact Information", "Home Address:Null\n Home Telephone Number:Null\n" +
                                           "Baguio Address:Null\n Cellphone Number:Null\n Email:juandealcruz@gmail.com");
     sluPortal conPersons = new sluPortal("Contact Persons", "Father:N/A\n Occupation:N/A\n Mother:N/A\n");
-    // TODO dl/abtslu
+   
+   // Downloadables/ About SLU
+                                                 
+   NestedList<sluPortal> downAbout = new NestedList<>();
+    sluPortal downloadAbout = new sluPortal("Downloadables & About SLU", null);
+    sluPortal downloadables = new sluPortal("Downloadables","<1>Student Handbok\n<2>Safety Orientation Manual\n" +
+                                            "<3>Ordinance 021-2018 - Harassement\n<4>Gsuite For Education\n<5>The Mission and Identity Cluster");
+    sluPortal aboutSLU = new sluPortal("About iSLU Portal","iSLU portal is for saint Louis university students and parents, that serves as a personal assistant in carrying out " + 
+                                      "university related tasks.");
+                                               
+                                                                                       
+                                                 
+                                                 
     NestedList<sluPortal> ptuRes = new NestedList<>();
     sluPortal ptu = new sluPortal("PTU Test Result", null);
     sluPortal slucee = new sluPortal("SLU-COLLEGE ENTRANCE EXAMINATION (SLU-CEE) RESULTS", "No Results found");
@@ -92,10 +104,19 @@ public class Main {
         //  trns of rec
         //  journ
         //  curri check
-        //  schl cal
-        //  per detl
-        //  dl/abtslu
-
+        //  schl
+        
+       // Personal Details
+        perDet.insert(perD);
+        perDet.insert(genInfo);
+        perDet.inset(conInfo);
+        perDet.insert(conPersons);
+        
+        // Downloadables & About iSLU
+        downAbout.insert(downloadAbout);
+        downAbout.insert(downloadables);
+        downAbout.insert(aboutSLU);
+        
         //PTU test result
         ptuRes.insert(ptu);
         ptuRes.insert(slucee);
