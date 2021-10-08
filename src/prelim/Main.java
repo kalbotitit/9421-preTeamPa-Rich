@@ -30,7 +30,21 @@ public class Main {
             "- CURRENTLY ENROLLED THIS FIRST SEMESTER, 2021-2022 IN BSCS 2.");
     // TODO schedule
     // TODO attendance
+    NestedList<sluPortal> attendanceMenu = new NestedList<>();
+    sluPortal attendance = new sluPortal("Attendance", null);
+    sluPortal studBehaviour = new sluPortal("Student Behavior","Bahaviour:\n"+"Great! No Absences/Tardiness were found.");
     // TODO stt of acc
+    NestedList<sluPortal> statementOfAccMenu = new NestedList<>();
+    sluPortal statementOfAcc = new sluPortal("Statement of Account", null);
+    sluPortal firstSemStatOfAcc = new sluPortal ("Statement of Accounts (FIRST SEMESTER, 2021-2022)", """
+            Your amount due for PRELIM is:\s
+            P X,XXX.XX\s
+            Your Remaining Balance as of October 2021 is:\s
+            P XX,XXX.XX""");
+    sluPortal mode = new sluPortal("Mode of Payment", "Dragonpay \n" + "Pay with Bukas");
+    sluPortal brkOfFees = new sluPortal("Breakdown of fees as of October 2021", "Date, Description, Amount");
+    sluPortal payTransacs = new sluPortal ("Dragonpay Payment Transactions (FIRST SEMESTER, 2021-2022)", "Date, Channel, Reference, Amount");
+
     // TODO grd
     //TODO trns of rec
     // TODO journ
@@ -59,7 +73,14 @@ public class Main {
 
         // schedule
         //  attendance
+        attendanceMenu.insert(attendance);
+        attendanceMenu.insert(studBehaviour);
         //  stt of acc
+        statementOfAccMenu.insert(statementOfAcc);
+        statementOfAccMenu.insert(firstSemStatOfAcc);
+        statementOfAccMenu.insert(mode);
+        statementOfAccMenu.insert(brkOfFees);
+        statementOfAccMenu.insert(payTransacs);
         //  grd
         //  trns of rec
         //  journ
