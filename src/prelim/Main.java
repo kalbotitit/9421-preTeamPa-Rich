@@ -36,7 +36,13 @@ public class Main {
     // TODO journ
     // TODO curri check
     // TODO schl cal
-    // TODO per detl
+    NestedList<sluPortal> perDet = new nestedList<>();
+    sluPortal perD = new sluPortal("Personal Test Developement", null);
+    sluPortal genInfo = new sluPortal("General Information", "Gender:Male\n Birthday:September 30, 2000\n" +
+                                           "Religion: Roman Catholic\n Birthplace:Baguio City\n Nationality: ");
+    sluPortal conInfo = new sluPortal("Contact Information", "Home Address:Null\n Home Telephone Number:Null\n" +
+                                          "Baguio Address:Null\n Cellphone Number:Null\n Email:juandealcruz@gmail.com");
+    sluPortal conPersons = new sluPortal("Contact Persons", "Father:N/A\n Occupation:N/A\n Mother:N/A\n")
     // TODO dl/abtslu
     NestedList<sluPortal> ptuRes = new NestedList<>();
     sluPortal ptu = new sluPortal("PTU Test Result", null);
