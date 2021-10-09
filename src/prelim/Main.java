@@ -190,7 +190,7 @@ public class Main {
         do {
             System.out.println("\n====Main Menu=====");
             printMainMenu(menu);
-            System.out.println(menu.getSize() + 1 + " Exit");
+            System.out.println(menu.getSize() + 1 + " Logout");
             System.out.print("Enter your choice: ");
             choice = Byte.parseByte(kbd.nextLine());
         } while (!isValid(menu.getSize(), choice));
@@ -211,14 +211,17 @@ public class Main {
         do {
             System.out.printf("====== %s Menu =====\n", subMenu.get(0).getMenuNm());
             printSubMenu(subMenu);
-            System.out.println(subMenu.getSize() + " Exit");
+            System.out.println(subMenu.getSize() + " Back");
             System.out.print("Enter your choice: ");
             choice = Byte.parseByte(kbd.nextLine());
         }while (!isValid(subMenu.getSize(), choice));
 
         if (choice == subMenu.getSize()) mainMenu(sluPortalList);
         else printContent(subMenu.get(choice));
-        // TODO code that return to subMenu after printing content
+        // return to subMenu method
+        System.out.print("\nPress Enter to continue");
+        String x = kbd.nextLine();
+        subMenu(subMenu);
 
     }
 
