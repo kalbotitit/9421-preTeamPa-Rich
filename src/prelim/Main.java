@@ -69,7 +69,49 @@ public class Main {
     sluPortal payTransacs = new sluPortal ("Dragonpay Payment Transactions (FIRST SEMESTER, 2021-2022)", "Date, Channel, Reference, Amount");
 
     //TODO grd
+    NestedList<sluPortal> gradesMenu = new NestedList<>();
+    sluPortal grd = new sluPortal("Grades",null);
+    sluPortal grades = new sluPortal("Grades (FIRST SEMESTER, 2021-2022)", String.format("%-12s%-15s%-98s%-8s%-8s%-8s%-17s%-8s%-8s%n", "Class code","Course number", "Descriptive Title", "Units", "Prelim", "Midterm", "Tentative Final", "Final","Weights\n" +
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "7025", "NSTP-CWTS 1", "FOUNDATIONS OF SERVICE", "3", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "7897", "FIT OA", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (OUTDOOR AND ADVENTURE ACTIVITIES)", "2", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9421A", "CS 211", "DATA STRUCTURES (LEC)", "2", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9421B", "CS 211L", "DATA STRUCTURES (LAB)", "1", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9422A", "CS 212", "OPERATING SYSTEMS (LEC)", "2", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9422B", "CS 212L", "OPERATING SYSTEMS (LAB)", "1", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9423", "CS 213", "HUMAN COMPUTER INTERACTION", "3", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9424", "GSTS", "SCIENCE, TECHNOLOGY, AND SOCIETY", "3","99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9425", "GRVA", "READING VISUAL ART", "3", "99", "99", "99", "99")+
+                    String.format("%-12s%-15s%-100s%-8s%-8s%-12s%-12s%-8s%n", "9426", "CFE 103", "CATHOLIC FOUNDATION OF MISSION", "3", "99", "99", "99", "99")));
+
     //TODO trns of rec
+    NestedList<sluPortal> transOfRecMenu = new NestedList<>();
+    sluPortal transcript = new sluPortal("Transcript of Records", null);
+    sluPortal transcriptOfRecords = new sluPortal("Transcript of Records", "FIRST SEMESTER, 2020-2021\n" +
+                    String.format("%-15s%-98s%-8s%-8s%n", "Course number", "Descriptive Title", "Grades", "Units\n"+
+                            String.format("%-15s%-100s%-8s%-8s%n","CFE 101", "GOD'S JOURNEY WITH HIS PEOPLE", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 111", "INTRODUCTION TO COMPUTING (LEC)", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 111L", "INTRODUCTION TO COMPUTING (LAB)", "99", "1")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 112", "COMPUTER PROGRAMMING 1 (LEC)", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 112L", "COMPUTER PROGRAMMING 1 (LAB)", "99", "1")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 113", "DISCRETE STRUCTURES", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","FIT HW", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (HEALTH AND WELLNESS)", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GART", "ART APPRECIATION", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GHIST", "READINGS IN PHILIPPINE HISTORY", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GMATH", "MATHEMATICS IN THE MODERN WORLD", "99", "3")+
+                            "SECOND SEMESTER, 2020-2021\n"+
+                            String.format("%-15s%-100s%-8s%-8s%n","CFE 102", "CHRISTIAN MORALITY IN OUR TIMES", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 121", "DIGITAL LOGIC DESIGN", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 122", "COMPUTER PROGRAMMING 2", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 122L", "COMPUTER PROGRAMMING 2 (LAB)", "99", "1")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 123", "ARCHITECTURE AND ORGANIZATION", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 123L", "ARCHITECTURE AND ORGANIZATION (LAB)", "99", "1")+
+                            String.format("%-15s%-100s%-8s%-8s%n","FIT CS", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (COMBATIVE SPORTS)", "99", "2")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GENVI", "ENVIRONMENTAL SCIENCE", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GPCOM", "PURPOSIVE COMMUNICATION", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","GSELF", "UNDERSTANDING THE SELF", "99", "3")+
+                            "SHORT TERM, 2021\n"+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 131", "SOFTWARE MODELING AND ANALYSIS", "99", "3")+
+                            String.format("%-15s%-100s%-8s%-8s%n","CS 132", "MATHEMATICS FOR COMPUTER SCIENCE", "99", "3")));
     //Journal
     NestedList<sluPortal> journalMenu = new NestedList<>();
     sluPortal journal = new sluPortal("Journal", null);
@@ -92,6 +134,97 @@ public class Main {
                                                             3. Should you opt to read the full text of the article,\s 
                                                                 you may request it by sending an email to uldir@slu.edu.ph""");
     //TODO curri check
+    NestedList<sluPortal> curriculumMenu = new NestedList();
+    sluPortal curr = new sluPortal("Curriculum Checklist",null);
+    sluPortal curriculumChecklist = new sluPortal("BACHELOR OF SCIENCE IN COMPUTER SCIENCE FIRST SEMESTER, 2018-2019", "FIRST YEAR, FIRST SEMESTER\n" +
+            String.format("%-15s%-96s%-8s%n", "Course number", "Descriptive Title", "Units\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 101", "GOD'S JOURNEY WITH HIS PEOPLE", "3")+
+                    String.format("%-15s%-98s%-8s%n","CS 111", "INTRODUCTION TO COMPUTING (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 111L", "INTRODUCTION TO COMPUTING (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n","CS 112", "COMPUTER PROGRAMMING 1 (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 112L", "COMPUTER PROGRAMMING 1 (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n","CS 113", "DISCRETE STRUCTURES", "3")+
+                    String.format("%-15s%-98s%-8s%n","FIT HW", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (HEALTH AND WELLNESS)", "2")+
+                    String.format("%-15s%-98s%-8s%n","GART", "ART APPRECIATION", "3")+
+                    String.format("%-15s%-98s%-8s%n","GHIST", "READINGS IN PHILIPPINE HISTORY", "3")+
+                    String.format("%-15s%-98s%-8s%n","GMATH", "MATHEMATICS IN THE MODERN WORLD", "3")+
+                    "FIRST YEAR, SECOND SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 102", "CHRISTIAN MORALITY IN OUR TIMES", "3")+
+                    String.format("%-15s%-98s%-8s%n","CS 121", "DIGITAL LOGIC DESIGN", "3")+
+                    String.format("%-15s%-98s%-8s%n","CS 122", "COMPUTER PROGRAMMING 2", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 122L", "COMPUTER PROGRAMMING 2 (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n","CS 123", "ARCHITECTURE AND ORGANIZATION", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 123L", "ARCHITECTURE AND ORGANIZATION (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n","FIT CS", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (COMBATIVE SPORTS)", "2")+
+                    String.format("%-15s%-98s%-8s%n","GENVI", "ENVIRONMENTAL SCIENCE", "3")+
+                    String.format("%-15s%-98s%-8s%n","GPCOM", "PURPOSIVE COMMUNICATION", "3")+
+                    String.format("%-15s%-98s%-8s%n","GSELF", "UNDERSTANDING THE SELF", "3")+
+                    "FIRST YEAR, SHORT TERM\n"+
+                    String.format("%-15s%-98s%-8s%n","CS 131", "SOFTWARE MODELING AND ANALYSIS", "3")+
+                    String.format("%-15s%-98s%-8s%n","CS 132", "MATHEMATICS FOR COMPUTER SCIENCE", "3")+
+                    "SECOND YEAR, FIRST SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n", "CFE 103", "CATHOLIC FOUNDATION OF MISSION" ,"3")+
+                    String.format("%-15s%-98s%-8s%n", "CS 211",	"DATA STRUCTURES (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n", "CS 211L", "DATA STRUCTURES (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n", "CS 212",	"OPERATING SYSTEMS (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n", "CS 212L", "OPERATING SYSTEMS (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n", "CS 213", "HUMAN COMPUTER INTERACTION", "3")+
+                    String.format("%-15s%-98s%-8s%n", "FIT OA", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (OUTDOOR AND ADVENTURE ACTIVITIES)", "2")+
+                    String.format("%-15s%-98s%-8s%n", "GRVA", "READING VISUAL ART",	"3")+
+                    String.format("%-15s%-98s%-8s%n", "GSTS", "SCIENCE, TECHNOLOGY, AND SOCIETY", "3")+
+                    String.format("%-15s%-98s%-8s%n", "NSTP-CWTS 1", "FOUNDATIONS OF SERVICE", "3")+
+                    "SECOND YEAR, SECOND SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 104", "CICM MISSIONARY IDENTITY",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 221", "INFORMATION MANAGEMENT (LEC)",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 221L", "INFORMATION MANAGEMENT (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 222", "COMPUTER PROGRAMMING 3 (LEC)",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 222L", "COMPUTER PROGRAMMING 3 (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 223", "AUTOMATA AND FORMAL LANGUAGES", "3")+
+                    String.format("%-15s%-98s%-8s%n","FIT AQ", "PHYSICAL ACTIVITY TOWARDS HEALTH AND FITNESS (AQUATICS)", "2")+
+                    String.format("%-15s%-98s%-8s%n","GCWORLD", "THE CONTEMPORARY WORLD","3")+
+                    String.format("%-15s%-98s%-8s%n","GETHICS", "ETHICS", "3")+
+                    String.format("%-15s%-98s%-8s%n","NSTP-CWTS 2", "SOCIAL AWARENESS AND EMPOWERMENT FOR SERVICE", "3")+
+                    "SECOND YEAR, SHORT TERM\n"+
+                    String.format("%-15s%-98s%-8s%n","CS 231", "COMPUTER NETWORKS (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 231L",	"COMPUTER NETWORKS (LAB)", "1")+
+                    String.format("%-15s%-98s%-8s%n","GENTREP",	"THE ENTREPRENEURIAL MIND", "3")+
+                    String.format("%-15s%-98s%-8s%n","GRIZAL",	"THE LIFE AND WORKS OF RIZAL", "3")+
+                    "THIRD YEAR, FIRST SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 105A", "CICM IN ACTION: JUSTICE, PEACE, INTEGRITY OF CREATION, INDIGENOUS PEOPLES & INTERRELIGIOUS DIALOGUE", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 311",	"APPLICATIONS DEVELOPMENT (LEC)", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 311L",	"APPLICATIONS DEVELOPMENT (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 312", "WEB SYSTEMS DEVELOPMENT (LEC)",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 312L",	"WEB SYSTEMS DEVELOPMENT (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 313",	"SOFTWARE ENGINEERING",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 314",	"SOCIAL AND PERSONAL DEVELOPMENT IN THE ICT WORKPLACE",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 315",	"TECHNOLOGY-ASSISTED PRESENTATION AND COMMUNICATION", "3")+
+                    String.format("%-15s%-98s%-8s%n","CSM 316",	"NUMERICAL METHODS FOR COMPUTER SCIENCE","3")+
+                    "THIRD YEAR, SECOND SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 105B", "CICM IN ACTION: ENVIRONMENTAL PLANNING & MANAGEMENT, AND DISASTER RISK REDUCTION MANAGEMENT",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 321",	"ARTIFICIAL INTELLIGENCE",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 322",	"DATA SCIENCE (LEC)",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 322L",	"DATA SCIENCE (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 323", "MODELING AND SIMULATION (LEC)",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 323L",	"MODELING AND SIMULATION (LAB)",	"1")+
+                    String.format("%-15s%-98s%-8s%n","CS 324",	"METHODS OF RESEARCH IN COMPUTER SCIENCE",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 325",	"sSTRUCTURE OF PROGRAMMING LANGUAGES",	"3")+
+                    "THIRD YEAR, SHORT TERM\n"+
+                    String.format("%-15s%-98s%-8s%n","CS 331", "PRACTICUM", "6")+
+                    "FOURTH YEAR, FIRST SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 106A", "EMBRACING THE CICM MISSION",	"2")+
+                    String.format("%-15s%-98s%-8s%n","CS 411",	"CS THESIS 1",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 412",	"INFORMATION ASSURANCE AND SECURITY",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CS 413",	"PROFESSIONAL PRACTICE AND CYBERETHICS",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CSE 25",	"UX CONCEPTS AND DESIGN",	"3")+
+                    String.format("%-15s%-98s%-8s%n","CSE 15",	"DATA MINING (Elective)",	"2")+
+                    "FOURTH YEAR, SECOND SEMESTER\n"+
+                    String.format("%-15s%-98s%-8s%n","CFE 106B", "EMBRACING THE CICM MISSION", "2")+
+                    String.format("%-15s%-98s%-8s%n","CS 421",	"CS THESIS 2", "3")+
+                    String.format("%-15s%-98s%-8s%n","CS 422",	"DISTRIBUTED COMPUTING", "3")+
+                    String.format("%-15s%-98s%-8s%n","CSE",	"ELECTIVE 3", "3")+
+                    String.format("%-15s%-98s%-8s%n","CSE",	"ELECTIVE 4", "3")+
+                    String.format("%-15s%-98s%-8s%n","FOR LANG 1",	"FOREIGN LANGUAGE 1", "3")));
+
     //School Calendar
     NestedList<sluPortal> schoolCalendarMenu = new NestedList<>();
     sluPortal schoolCalendar = new sluPortal("School Calendar", null);
@@ -163,7 +296,11 @@ public class Main {
         statementOfAccMenu.insert(brkOfFees);
         statementOfAccMenu.insert(payTransacs);
         //  grd
+        gradesMenu.insert(grd);
+        gradesMenu.insert(grades);
         //  trns of rec
+        transOfRecMenu.insert(transcript);
+        transOfRecMenu.insert(transcriptOfRecords);
         //  journ
         journalMenu.insert(journal);
         journalMenu.insert(journalIndexes);
@@ -171,6 +308,8 @@ public class Main {
         journalMenu.insert(periodicalLibrariesIndexes);
         journalMenu.insert(accessingArticleIndexes);
         //  curri check
+        curriculumMenu.insert(curr);
+        curriculumMenu.insert(curriculumChecklist);
         //  schl clndr
         schoolCalendarMenu.insert(schoolCalendar);
         schoolCalendarMenu.insert(calendar);
