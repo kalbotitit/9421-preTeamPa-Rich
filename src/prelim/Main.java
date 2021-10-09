@@ -72,7 +72,7 @@ public class Main {
             9424	        GSTS	            SCIENCE, TECHNOLOGY, AND SOCIETY	3	        0730 - 1200 PM	    MT	    BATCH1\n
             9425	        GRVA	            READING VISUAL ART	                3	        0730 - 1200 PM	    MT	    BATCH3\n
             9426	        CFE 103	            CATHOLIC FOUNDATION OF MISSION	    3	        0430 - 0530 PM	    MWF	    SEMESTRAL\n""");
-        sluPortal totalUnits = new sluPortal("23", null);
+        sluPortal totalUnits = new sluPortal("Total Units", "23");
         schedMenu.insert(schedule);
         schedMenu.insert(classSchedule);
         schedMenu.insert(totalUnits);
