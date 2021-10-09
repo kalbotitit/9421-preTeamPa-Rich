@@ -17,24 +17,46 @@
 
 package prelim;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class Main {
 
+    private Calendar cal = Calendar.getInstance();
     private Scanner kbd = new Scanner(System.in);
+
     NestedList<NestedList<sluPortal>> sluPortalList = new NestedList<>();
     NestedList<sluPortal> homeMenu = new NestedList<>();
     sluPortal home = new sluPortal("Home", null);
     sluPortal announcement = new sluPortal("Events, News and Announcement", "DRAGONPAY - SLU Payment Procedures -view attachment");
     sluPortal studStatus = new sluPortal("Student Status", "Status:\n" +
             "- CURRENTLY ENROLLED THIS FIRST SEMESTER, 2021-2022 IN BSCS 2.");
-    // TODO schedule
 
+    //Schedule
+    NestedList<sluPortal> schedMenu = new NestedList<>();
+    sluPortal schedule = new sluPortal("Schedule", null);
+    sluPortal classSchedule = new sluPortal("Class Schedule (FIRST SEMESTER, 2021-2022)", """
+            Class Code      Course Number       Course Description                  Units      Schedule             Days    Room\n
+            7025	        NSTP-CWTS 1	        FOUNDATIONS OF SERVICE	            3	        0730 - 1200 PM	    FS	    BATCH2\n
+            7897	        FIT OA	            PHYSICAL ACTIVITY                   2	        0730 - 1030 AM	    WTH	    BATCH2\n
+                                                TOWARDS HEALTH\n
+                                                AND FITNESS\n       
+            9421A	        CS 211	            DATA STRUCTURES (LEC)	            2	        1200 - 0100 PM	    WS	    SEMESTRAL\n
+            9421B	        CS 211L	            DATA STRUCTURES (LAB)	            1	        1230 - 0200 PM	    MTH	    SEMESTRAL\n
+            9422A	        CS 212	            OPERATING SYSTEMS (LEC)	            2	        0300 - 0400 PM	    TF	    SEMESTRAL\n
+            9422B	        CS 212L	            OPERATING SYSTEMS (LAB)	            1	        0230 - 0400 PM	    MTH	    SEMESTRAL\n
+            9423	        CS 213	            HUMAN COMPUTER INTERACTION	        3	        0500 - 0600 PM	    TTHS	SEMESTRAL\n
+            9424	        GSTS	            SCIENCE, TECHNOLOGY, AND SOCIETY	3	        0730 - 1200 PM	    MT	    BATCH1\n
+            9425	        GRVA	            READING VISUAL ART	                3	        0730 - 1200 PM	    MT	    BATCH3\n
+            9426	        CFE 103	            CATHOLIC FOUNDATION OF MISSION	    3	        0430 - 0530 PM	    MWF	    SEMESTRAL\n""");
+    sluPortal totalUnits = new sluPortal("23", null);
 
+    //Attendance Menu
     NestedList<sluPortal> attendanceMenu = new NestedList<>();
     sluPortal attendance = new sluPortal("Attendance", null);
     sluPortal studBehaviour = new sluPortal("Student Behavior","Bahaviour:\n"+"Great! No Absences/Tardiness were found.");
-
+    
+    //Statement Of Account
     NestedList<sluPortal> statementOfAccMenu = new NestedList<>();
     sluPortal statementOfAcc = new sluPortal("Statement of Account", null);
     sluPortal firstSemStatOfAcc = new sluPortal ("Statement of Accounts (FIRST SEMESTER, 2021-2022)", """
@@ -46,11 +68,49 @@ public class Main {
     sluPortal brkOfFees = new sluPortal("Breakdown of fees as of October 2021", "Date, Description, Amount");
     sluPortal payTransacs = new sluPortal ("Dragonpay Payment Transactions (FIRST SEMESTER, 2021-2022)", "Date, Channel, Reference, Amount");
 
-    // TODO grd
+    //TODO grd
     //TODO trns of rec
-    // TODO journ
-    // TODO curri check
-    // TODO schl cal
+    //Journal
+    NestedList<sluPortal> journalMenu = new NestedList<>();
+    sluPortal journal = new sluPortal("Journal", null);
+    sluPortal journalIndexes = new sluPortal("Saint Louis University Libraries Periodical Article Indexes", null);
+    sluPortal whatJournalIndexes = new sluPortal("WHAT ARE JOURNAL INDEXES?", """
+                                                    An index is a list of items pulled together for a purpose. Journal indexes also\s
+                                                    called bibliographic indexes or bibliographic databases are lists of journals,\s 
+                                                    organized by discipline, subject, or type of publication.""");
+    sluPortal periodicalLibrariesIndexes = new sluPortal("THE SLU LIBRARIES’ PERIODICAL ARTICLE INDEXES", """
+                                                    One of the Home Library Services that the University Libraries offer\s 
+                                                    is the Periodical Article Indexes where the subscribed print journals\s 
+                                                    are being indexed and can be accessed through an online bibliographic database.\s
+
+                                                    The Periodical Article Indexes database provides access to periodical articles\s 
+                                                    by subject or author and it can help you find articles about a specific topic.""");
+    sluPortal accessingArticleIndexes = new sluPortal("STEPS IN ACCESSING THE PERIODICAL ARTICLE INDEXES", """
+                                                            1. Enter your topic on the search box and click Search\s
+                                                            2. You will see the various bibliographic details (i.e. title of the journal, the specific date,\s 
+                                                                volume and issue, and page numbers for the article) that contain your topic.\s
+                                                            3. Should you opt to read the full text of the article,\s 
+                                                                you may request it by sending an email to uldir@slu.edu.ph""");
+    //TODO curri check
+    //School Calendar
+    NestedList<sluPortal> schoolCalendarMenu = new NestedList<>();
+    sluPortal schoolCalendar = new sluPortal("School Calendar", null);
+    sluPortal calendar = new sluPortal("School Calendar SY 2021-2022\n", "At present date and time is: " + cal.getTime() + """
+                                            \nGeneral Events:\n
+                                                FIRST SEMESTER, 2021-2022\n
+                                                Registration (No Classes)	August 09, 2021 Monday\n
+                                            Holiday:\n
+                                                No events to display!\n
+                                            Holiday not in school calendar:\n
+                                                No events to display!\n
+                                            Exam:\n
+                                                No events to display!\n
+                                            Calamity:\n
+                                                No events to display!\n
+                                            Others:\n
+                                                No events to display!\n
+                                            """);
+
     NestedList<sluPortal> perDet = new NestedList<>();
     sluPortal perD = new sluPortal("Personal Test Developement", null);
     sluPortal genInfo = new sluPortal("General Information", "Gender:Male\n Birthday:September 30, 2000\n" +
@@ -89,8 +149,10 @@ public class Main {
         homeMenu.insert(announcement);
         homeMenu.insert(studStatus);
         sluPortalList.insert(homeMenu);
-
         // schedule
+        schedMenu.insert(schedule);
+        schedMenu.insert(classSchedule);
+        schedMenu.insert(totalUnits);
         //  attendance
         attendanceMenu.insert(attendance);
         attendanceMenu.insert(studBehaviour);
@@ -103,13 +165,20 @@ public class Main {
         //  grd
         //  trns of rec
         //  journ
+        journalMenu.insert(journal);
+        journalMenu.insert(journalIndexes);
+        journalMenu.insert(whatJournalIndexes);
+        journalMenu.insert(periodicalLibrariesIndexes);
+        journalMenu.insert(accessingArticleIndexes);
         //  curri check
-        //  schl
+        //  schl clndr
+        schoolCalendarMenu.insert(schoolCalendar);
+        schoolCalendarMenu.insert(calendar);
         
        // Personal Details
         perDet.insert(perD);
         perDet.insert(genInfo);
-        perDet.inset(conInfo);
+        perDet.insert(conInfo);
         perDet.insert(conPersons);
         
         // Downloadables & About iSLU
