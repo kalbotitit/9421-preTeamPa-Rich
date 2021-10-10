@@ -1,5 +1,3 @@
-## Delete na lang yung TODO kapag tapos na kayo dun
-
 # 9421-CS211 Group Activity 2
 
 Cortez, Leo Anthony
@@ -11,10 +9,3 @@ Estrada, Rhynn Dhuanne Cedrick
 Jacinto, Josef Luis
 
 Quedado, Reina May
-
-### Initial
-sluPortal class for the reference type of content for menu
-
-Suggest kayo kung ano ang pwedeng gawin 
-
-
